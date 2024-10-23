@@ -1,0 +1,331 @@
+/* Header styles */
+header {
+    background-color: #D09D00;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu-button img {
+    width: 48px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Style for the dark mode toggle */
+#theme-toggle {
+    width: 28px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Menu button style for when open */
+#menu-button.open img {
+    content: url('assets/open-menu.svg');
+}
+
+/* Menu and Modal Styles */
+#side-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    background-color: #D09D00;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    padding: 20px;
+}
+
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#side-menu ul li {
+    margin: 15px 0;
+}
+
+#side-menu ul li a, #side-menu ul li button {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Modal styles */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #FFF;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+/* Reset some default styles for a consistent look */
+body, h1, h2, h3, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+}
+
+/* Body background color */
+body {
+    background-color: #D09D00;
+    color: #000000;
+    line-height: 1.6;
+    text-align: left;
+    position: relative;
+}
+
+/* Skip Navigation Link */
+.skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+}
+
+.skip-nav:focus {
+    top: 0;
+}
+
+/* Section 1: Introduction gradient background (Dark to Light) */
+#introduction {
+    background: linear-gradient(to bottom, #D09D00, #FFD700);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    text-align: left;
+}
+
+#introduction p {
+    font-size: clamp(24px, 10vw, 32px); /* Matches the body but ensures readability */
+}
+
+/* Resume button styling */
+#resume-button {
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#resume-button:hover {
+    background-color: #D09D00;
+}
+
+/* SVG waves styling */
+#waves-top, #waves-bottom {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Set the wave SVGs as background images */
+#waves-top path {
+    fill: #FFD700;
+}
+
+#waves-bottom {
+    transform: scaleY(-1);
+}
+
+#waves-bottom path {
+    fill: #FFD700;
+}
+
+/* Sections 2 and 3: About Me and Projects */
+#about-me, #projects {
+    background-color: #D09D00;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+#about-me {
+    padding-top: 100px;
+}
+
+#projects {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+/* Footer gradient background (Light to Dark) */
+footer {
+    background: linear-gradient(to bottom, #FFD700, #D09D00);
+    padding: 20px;
+    text-align: left;
+}
+
+footer p {
+    text-align: center;
+    font-size: clamp(14px, 3vw, 18px);
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px 5px;
+    align-items: center;
+    font-size: clamp(14px, 4vw, 18px);
+    padding: 0;
+}
+
+footer ul li {
+    display: contents;
+}
+
+footer ul li img {
+    display: block;
+    margin: 0 auto;
+}
+
+footer ul li a,
+footer ul li span {
+    display: block;
+    text-align: left;
+}
+
+.mail-icon {
+    width: 30px;
+}
+
+.contact-icon {
+    width: 30px;
+}
+
+.linkedin-icon {
+    width: 20px;
+}
+
+.github-icon {
+    width: 20px;
+}
+
+/* Additional styling for layout and spacing */
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+header h2 {
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* General body text */
+body {
+    font-size: 5vw; /* Adjust font size relative to viewport width */
+}
+
+/* Larger text for headings */
+h1 {
+    font-size: clamp(32px, 18vw, 64px);
+    line-height: 0.9;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: clamp(28px, 8vw, 56px);
+}
+
+#about-me h2 {
+    line-height: 0.9;
+    margin-bottom: 0;
+}
+
+#about-me p {
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: clamp(24px, 5vw, 48px);
+}
+
+/* Responsive buttons */
+button {
+    font-size: clamp(20px, 4.5vw, 24px);
+}
+
+/* Responsive paragraph text */
+p {
+    font-size: clamp(24px, 5vw, 32px);
+}
+
+/* Footer text */
+footer {
+    font-size: clamp(14px, 3vw, 18px);
+}
+
+footer p {
+    margin-top: 40px;
+}

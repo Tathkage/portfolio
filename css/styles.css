@@ -5,8 +5,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 1001;
 }
 
 .header-icons {
@@ -47,33 +45,14 @@ header {
 /* Menu and Modal Styles */
 #side-menu {
     position: fixed;
-    top: 60px;
-    right: 20px;
+    right: 0;
+    top: 0;
     width: 250px;
     background-color: #E7BA00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
     flex-direction: column;
     padding: 20px;
-    
-    /* Updated transition for smooth dropdown effect */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    
-    /* Initial state: hidden and scaled down */
-    transform: scaleY(0);
-    opacity: 0;
-    transform-origin: top;
-    
-    z-index: 1000;
-}
-
-#side-menu.hidden {
-    transform: scaleY(0);
-    opacity: 0;
-}
-
-#side-menu.visible {
-    transform: scaleY(1);
-    opacity: 1;
 }
 
 #side-menu ul {
@@ -96,7 +75,7 @@ header {
 
 /* Modal styles */
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 999;
     left: 0;
@@ -115,8 +94,8 @@ header {
     border-radius: 8px;
 }
 
-.modal.hidden {
-    display: none;
+.hidden {
+    display: none !important;
 }
 
 /* Reset some default styles for a consistent look */
@@ -192,16 +171,13 @@ body {
 }
 
 /* Set the wave SVGs as background images */
-#waves-top path {
-    fill: #FFE794;
+#waves-top {
+    background-image: url('../assets/waves-top.svg');
 }
 
 #waves-bottom {
+    background-image: url('../assets/waves-bottom.svg');
     transform: scaleY(-1);
-}
-
-#waves-bottom path {
-    fill: #FFE794;
 }
 
 /* Sections 2 and 3: About Me and Projects */
