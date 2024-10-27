@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Document Metadata and Links
+        ---------------------------
+        - charset: Defines the character encoding for the document.
+        - viewport: Ensures responsive design by controlling layout on mobile browsers.
+        - description: Provides a brief description of the website for SEO purposes.
+        - title: Sets the title of the webpage displayed in the browser tab.
+        - link: Links to the external CSS stylesheet for theming (light mode by default).
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tathluach Chol's personal website - Full-Stack Software Developer.">
+    <title>Tathluach Chol - Software Developer</title>
+    <link id="theme-style" rel="stylesheet" href="css/light-styles.css">
+</head>
+
+<body>
+    <!--
+        Header Section
+        --------------
+        - Acts as the banner of the website.
+        - Contains the site logo (TC) and interactive icons for theme toggling and menu.
+        - Utilizes ARIA roles and labels for improved accessibility.
+    -->
+    <header role="banner" aria-label="Site header">
+        <!-- Site Logo -->
+        <h2>TC</h2>
+        <div class="header-icons">
+            <!-- Theme Toggle Button -->
+            <img id="theme-toggle" src="assets/dark-mode.svg" alt="Toggle Dark Mode" tabindex="0">
+            <!-- Menu Button to Toggle Side Menu -->
+            <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="side-menu">
+                <img src="assets/closed-menu.svg" alt="Menu Icon">
+            </button>
+        </div>
+    </header>
+
+    <!--
+        Header Placeholder
+        -------------------
+        - Maintains layout spacing when the header is fixed.
+    -->
+    <div class="header-placeholder"></div>
+
+    <!--
+        Side Navigation Menu
+        --------------------
+        - Hidden by default and slides in when triggered.
+        - Contains navigation links to different sections of the website.
+        - Includes a button to open the contact form modal.
+        - ARIA attributes and tabindex are managed dynamically for accessibility.
+    -->
+    <nav id="side-menu" aria-label="Main Navigation" aria-hidden="true" class="hidden">
+        <ul>
+            <li><a href="#about-me" class="menu-link" tabindex="-1">About Me</a></li>
+            <li><a href="#projects" class="menu-link" tabindex="-1">Projects</a></li>
+            <li><button id="open-contact-form" class="menu-button" tabindex="-1">Contact Me</button></li>
+        </ul>
+    </nav>    
+
+    <!--
+        Contact Form Modal
+        ------------------
+        - Hidden by default and displayed as a modal dialog when triggered.
+        - Contains a form for users to send messages.
+        - Includes accessibility features such as ARIA roles and labels.
+    -->
+    <div id="contact-form-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="contact-form-title">
+        <div class="modal-content">
+            <!-- Close Button for the Modal -->
+            <span class="close-button" aria-label="Close Contact Form" tabindex="0">&times;</span>
+            <!-- Modal Title -->
+            <h2 id="contact-form-title">Contact Me</h2>
+            <!-- Contact Form -->
+            <form id="contact-form" novalidate>
+                <!-- Name Input Field -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+
+                <!-- Email Input Field -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <!-- Message Textarea Field -->
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!--
+        Main Content Area
+        -----------------
+        - Contains all the primary content of the website, divided into various sections.
+        - The `tabindex="-1"` allows focus to be programmatically set for accessibility.
+    -->
+    <main id="portfolio" tabindex="-1">
+        <!--
+            Section 1: Introduction
+            -----------------------
+            - Provides a brief introduction about Tathluach Chol.
+            - Includes a button to view the resume.
+            - Uses ARIA attributes for accessibility.
+        -->
+        <section id="introduction" aria-labelledby="intro-title">
+            <h1 id="intro-title">Tathluach Chol</h1>
+            <p>I create accessible, secure, and user-focused web applications and digital solutions.</p>
+            <button id="resume-button" aria-label="View Resume">Resume</button>
+        </section>
+
+        <!--
+            Top Waves Graphic
+            -----------------
+            - Decorative SVG waves to enhance the visual appeal of the page.
+            - Positioned at the top of the main content.
+        -->
+        <div id="waves-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" >
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path>
+            </svg>
+        </div>
+
+        <!--
+            Section 2: About Me
+            --------------------
+            - Provides detailed information about Tathluach Chol's background, education, and expertise.
+            - Enhances SEO with relevant keywords and structured content.
+        -->
+        <section id="about-me" aria-labelledby="about-title">
+            <h2 id="about-title">I am a full-stack software developer.</h2>
+            <p>I am a passionate software engineer and recent Computer Science graduate from Texas A&M University, with minors in Cybersecurity and Mathematics. My experience spans various aspects of software development, including web applications and backend systems. I have built user-friendly digital platforms that address real-world needs, from static websites to complex applications.</p>
+        </section>
+
+        <!--
+            Section 3: Projects
+            --------------------
+            - Showcases projects developed by Tathluach Chol.
+            - Includes images, descriptions, and links to live projects.
+            - Uses semantic HTML elements for better structure and SEO.
+        -->
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projects</h2>
+            <figure>
+                <img src="images/manguro-frontpage.webp" alt="Screenshot of the front page of manguro.com.">
+                <figcaption>Manguro: A personalized anime watchlist and recommendation platform.</figcaption>
+            </figure>
+            <h3 class="project-heading">
+                <a href="http://manguro.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Manguro website">Manguro</a>
+            </h3>
+        </section>
+
+        <!--
+            Bottom Waves Graphic
+            --------------------
+            - Decorative SVG waves to create a visual balance at the bottom of the main content.
+            - Mirrors the top waves for a cohesive design.
+        -->
+        <div id="waves-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" >
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path>
+            </svg>
+        </div>
+    </main>
+
+    <!--
+        Footer Section
+        --------------
+        - Contains contact information and links to social profiles.
+        - Utilizes ARIA labels for accessibility.
+        - Ensures all links open in new tabs where appropriate and include `rel` attributes for security.
+    -->
+    <footer role="contentinfo">
+        <h2>Contact Information</h2>
+        <ul>
+            <li aria-label="Email address">
+                <img class="mail-icon" src="assets/mail.svg" alt="Email Icon">
+                <a href="mailto:tathluach.krc@gmail.com">tathluach.krc@gmail.com</a>
+            </li>
+            <li>
+                <img class="contact-icon" src="assets/contact.svg" alt="Contact Form Icon">
+                <a href="#" id="footer-contact-link" aria-label="Open Contact Form">Contact Form</a>
+            </li>
+            <li>
+                <img class="linkedin-icon" src="assets/linkedin.svg" alt="LinkedIn Icon">
+                <a href="https://www.linkedin.com/in/Tathluach/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+            </li>
+            <li>
+                <img class="github-icon" src="assets/github.svg" alt="GitHub Icon">
+                <a href="https://github.com/Tathkage" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+            </li>
+        </ul>
+        <p>© 2024 Tathluach Chol. All rights reserved.</p>
+    </footer>
+
+    <!--
+        JavaScript Inclusion
+        ---------------------
+        - Links to the external JavaScript file that handles interactivity and dynamic behaviors.
+    -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
