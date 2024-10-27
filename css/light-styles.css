@@ -281,7 +281,6 @@ header.sticky + .header-placeholder {
     background: linear-gradient(to bottom, #E7BA00, #FFE794);
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 25px;
     padding-bottom: 50px;
     text-align: left;
 }
@@ -346,12 +345,9 @@ header.sticky + .header-placeholder {
     background-color: #FFEEB7;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: left;
-}
-
-/* Additional Padding for About Me Section */
-#about-me {
-    padding-top: 100px;
 }
 
 /* =======================
