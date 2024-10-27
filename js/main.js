@@ -59,7 +59,6 @@ menuButton.addEventListener('click', () => {
     sideMenu.classList.toggle('visible');
     const isVisible = sideMenu.classList.contains('visible');
     menuButton.querySelector('img').src = isVisible ? 'assets/open-menu.svg' : 'assets/closed-menu.svg';
-    document.body.classList.toggle('no-scroll'); // Optional: Prevent background scrolling
     
     // Toggle the 'sticky' class on the header
     header.classList.toggle('sticky');
@@ -70,6 +69,32 @@ menuButton.addEventListener('click', () => {
     } else {
         headerPlaceholder.style.display = 'none';
     }
+});
+
+// Function to close the side menu
+function closeSideMenu() {
+    // Remove the 'visible' class to hide the side menu
+    sideMenu.classList.remove('visible');
+    
+    // Update the menu button icon to 'closed-menu.svg'
+    menuButton.querySelector('img').src = 'assets/closed-menu.svg';
+    
+    // Remove 'no-scroll' class to allow background scrolling
+    document.body.classList.remove('no-scroll');
+    
+    // Remove the 'sticky' class from the header
+    header.classList.remove('sticky');
+    
+    // Hide the header placeholder
+    headerPlaceholder.style.display = 'none';
+}
+
+// Select all links and buttons inside the side menu
+const sideMenuItems = document.querySelectorAll('#side-menu a, #side-menu button');
+
+// Add click event listeners to each side menu item to close the side menu when clicked
+sideMenuItems.forEach(item => {
+    item.addEventListener('click', closeSideMenu);
 });
 
 // Contact form modal
