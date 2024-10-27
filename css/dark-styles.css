@@ -344,16 +344,14 @@ header.sticky + .header-placeholder {
    ======================= */
 
 /* About Me and Projects Sections Container */
+/* About Me and Projects Sections Container */
 #about-me, #projects {
     background-color: #D09D00;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: left;
-}
-
-/* Additional Padding for About Me Section */
-#about-me {
-    padding-top: 100px;
 }
 
 /* =======================
