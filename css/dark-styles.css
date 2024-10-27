@@ -293,9 +293,60 @@ body {
     padding-top: 100px;
 }
 
-#projects {
-    padding-top: 50px;
-    padding-bottom: 100px;
+/* Clickable Project Links */
+#projects a.project-link,
+#projects a.project-image-link,
+#projects a.project-heading-link {
+    display: block;
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#projects figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the image and caption horizontally */
+    margin: 0 auto; /* Centers the figure within the section */
+    max-width: 100%; /* Ensures the figure doesn't exceed the container's width */
+    padding: 0 20px; /* Optional: Adds horizontal padding for better spacing on smaller screens */
+}
+
+#projects img {
+    max-width: 100%; /* Restricts the image width to the parent container's width */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 8px; /* Optional: Adds rounded corners to the image for aesthetic purposes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+#projects figcaption {
+    margin-top: 10px; /* Adds space between the image and the caption */
+    font-size: 16px; /* Adjusts the font size for readability */
+    color: #555; /* Sets a grey color for the caption text */
+    text-align: center; /* Centers the caption text */
+    max-width: 100%; /* Ensures the caption doesn't exceed the container's width */
+}
+
+#projects img {
+    transition: transform 0.3s ease;
+}
+
+#projects img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+/* Clickable Project Heading Link */
+#projects h3.project-heading a {
+    display: inline; /* Ensures the link only wraps the text */
+    text-decoration: none; /* Removes the default underline */
+    color: inherit; /* Inherits the text color from the parent element */
+    font-weight: bold; /* Makes the text bold for emphasis */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+#projects h3.project-heading a:hover {
+    text-decoration: underline;
 }
 
 /* Footer gradient background (Light to Dark) */
