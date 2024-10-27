@@ -1,34 +1,10 @@
 /* Header styles */
 header {
     background-color: #E7BA00;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 1001;
-    height: 10vh;
-}
-
-/* Sticky header when side menu is open */
-header.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 90vw;
-    background-color: #E7BA00; /* Ensure the background matches */
-    z-index: 1002; /* Higher than side-menu to stay on top */
-}
-
-/* Placeholder to maintain layout when header is fixed */
-.header-placeholder {
-    display: none;
-    height: 10vh;
-}
-
-header.sticky + .header-placeholder {
-    display: block;
 }
 
 .header-icons {
@@ -69,35 +45,19 @@ header.sticky + .header-placeholder {
 /* Menu and Modal Styles */
 #side-menu {
     position: fixed;
-    width: 100%;
+    right: 0;
+    top: 0;
+    width: 250px;
     background-color: #E7BA00;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding-bottom: 20px;
-    
-    /* Initial state: hidden and scaled down */
-    transform: scaleY(0);
-    opacity: 0;
-    transform-origin: top;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, border-top 0.3s ease-in-out;
-    
-    z-index: 1000;
-}
-
-#side-menu.hidden {
-    transform: scaleY(0);
-    opacity: 0;
-}
-
-#side-menu.visible {
-    transform: scaleY(1);
-    opacity: 1;
-    border-top: 2px solid #000000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    padding: 20px;
 }
 
 #side-menu ul {
     list-style: none;
-    padding-left: 10vw;
+    padding: 0;
 }
 
 #side-menu ul li {
@@ -108,14 +68,14 @@ header.sticky + .header-placeholder {
     background: none;
     border: none;
     color: #000;
-    font-size: clamp(24px, 10vw, 32px);
+    font-size: 18px;
     cursor: pointer;
     text-align: left;
 }
 
 /* Modal styles */
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 999;
     left: 0;
@@ -134,8 +94,8 @@ header.sticky + .header-placeholder {
     border-radius: 8px;
 }
 
-.modal.hidden {
-    display: none;
+.hidden {
+    display: none !important;
 }
 
 /* Reset some default styles for a consistent look */
@@ -211,16 +171,13 @@ body {
 }
 
 /* Set the wave SVGs as background images */
-#waves-top path {
-    fill: #FFE794;
+#waves-top {
+    background-image: url('../assets/waves-top.svg');
 }
 
 #waves-bottom {
+    background-image: url('../assets/waves-bottom.svg');
     transform: scaleY(-1);
-}
-
-#waves-bottom path {
-    fill: #FFE794;
 }
 
 /* Sections 2 and 3: About Me and Projects */
@@ -319,10 +276,6 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
-}
-
-#open-contact-form:hover {
     text-decoration: underline;
 }
 
