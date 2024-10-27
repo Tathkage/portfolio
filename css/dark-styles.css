@@ -1,4 +1,54 @@
-/* Header styles */
+/* 
+    light-styles.css
+    ----------------
+    Stylesheet for the Light Theme of Tathluach Chol's Personal Website.
+    This file defines the visual presentation of the website, including layout, typography, colors, and responsive behaviors.
+    Comprehensive comments are provided to explain the purpose and functionality of each section and rule.
+*/
+
+/* =======================
+   Reset and Base Styles
+   ======================= */
+
+/* Reset default margins and paddings for consistency across browsers */
+body, h1, h2, h3, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+}
+
+/* Set base styles for the body */
+body {
+    background-color: #D09D00;
+    color: #000000;
+    line-height: 1.6;
+    text-align: left;
+    position: relative;
+    font-size: 5vw;
+}
+
+/* Remove default list styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Remove default link underlines */
+a {
+    text-decoration: none;
+}
+
+/* Add underline on hover for better user feedback */
+a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   Header Styles
+   ======================= */
+
+/* Header Container */
 header {
     background-color: #D09D00;
     padding-left: 5vw;
@@ -11,26 +61,28 @@ header {
     height: 10vh;
 }
 
-/* Sticky header when side menu is open */
+/* Sticky Header when Side Menu is Open */
 header.sticky {
     position: fixed;
     top: 0;
     left: 0;
     width: 90vw;
-    background-color: #D09D00; /* Ensure the background matches */
-    z-index: 5; /* Higher than side-menu to stay on top */
+    background-color: #D09D00;
+    z-index: 5;
 }
 
-/* Placeholder to maintain layout when header is fixed */
+/* Placeholder to Maintain Layout When Header is Fixed */
 .header-placeholder {
     display: none;
     height: 10vh;
 }
 
+/* Display Placeholder When Header is Sticky */
 header.sticky + .header-placeholder {
     display: block;
 }
 
+/* Container for Header Icons (Theme Toggle and Menu Button) */
 .header-icons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -38,6 +90,7 @@ header.sticky + .header-placeholder {
     align-items: center;
 }
 
+/* Menu Button Styles */
 #menu-button {
     background: none;
     border: none;
@@ -48,25 +101,30 @@ header.sticky + .header-placeholder {
     justify-content: center;
 }
 
+/* Menu Button Image Styles */
 #menu-button img {
     width: 48px;
     height: auto;
     cursor: pointer;
 }
 
-/* Style for the dark mode toggle */
+/* Theme Toggle Button Styles */
 #theme-toggle {
     width: 28px;
     height: auto;
     cursor: pointer;
 }
 
-/* Menu button style for when open */
+/* Change Menu Button Icon When Open */
 #menu-button.open img {
     content: url('assets/open-menu.svg');
 }
 
-/* Menu and Modal Styles */
+/* =======================
+   Side Navigation Menu Styles
+   ======================= */
+
+/* Side Menu Container */
 #side-menu {
     position: fixed;
     width: 100%;
@@ -75,7 +133,7 @@ header.sticky + .header-placeholder {
     border-radius: 5px;
     padding-bottom: 20px;
     
-    /* Initial state: hidden and scaled down */
+    /* Initial State: Hidden and Scaled Down */
     transform: scaleY(0);
     opacity: 0;
     transform-origin: top;
@@ -84,26 +142,31 @@ header.sticky + .header-placeholder {
     z-index: 3;
 }
 
+/* Hidden State for Side Menu */
 #side-menu.hidden {
     transform: scaleY(0);
     opacity: 0;
 }
 
+/* Visible State for Side Menu */
 #side-menu.visible {
     transform: scaleY(1);
     opacity: 1;
     border-top: 2px solid #000000;
 }
 
+/* Side Menu List Styles */
 #side-menu ul {
     list-style: none;
     padding-left: 10vw;
 }
 
+/* Side Menu List Item Styles */
 #side-menu ul li {
     margin: 15px 0;
 }
 
+/* Side Menu Links and Buttons Styles */
 #side-menu ul li a, #side-menu ul li button {
     background: none;
     border: none;
@@ -113,7 +176,11 @@ header.sticky + .header-placeholder {
     text-align: left;
 }
 
-/* Modal styles */
+/* =======================
+   Contact Form Modal Styles
+   ======================= */
+
+/* Modal Container */
 .modal {
     display: block;
     position: fixed;
@@ -122,9 +189,10 @@ header.sticky + .header-placeholder {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #D09D0080;
+    background-color: #FFEEB780;
 }
 
+/* Modal Content Box */
 .modal-content {
     backdrop-filter: blur(6px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -138,97 +206,79 @@ header.sticky + .header-placeholder {
     color: #ffffff;
 }
 
-/* Hide modal when not active */
+/* Hide Modal When Not Active */
 .modal.hidden {
     display: none;
 }
 
-/* Form Group Styling */
+/* Close Button Styles */
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* =======================
+   Form Styles
+   ======================= */
+
+/* Form Group Container */
 .form-group {
     margin-bottom: 20px;
 }
 
-/* Label Styling */
+/* Label Styles */
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    text-align: left; /* Ensures label text is aligned to the top left */
+    text-align: left;
 }
 
-/* Input and Textarea Styling */
+/* Input and Textarea Styles */
 .form-group input,
 .form-group textarea {
     background: none;
     width: 100%;
     padding: 10px;
-    border: 1px solid #ffffff;
+    border: 1px solid #000000;
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
     color: #FFFFFF;
 }
 
-/* Placeholder Styling */
+/* Placeholder Text Styles */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #a9a9a9; /* Greyed out color for placeholders */
-    opacity: 1; /* Ensures the color is applied consistently across browsers */
+    color: #a9a9a9;
+    opacity: 1;
 }
 
-.modal-content .close-button {
-    cursor: pointer;
-}
-
-/* Button Styling */
+/* Submit Button Styles */
 #contact-form button {
-    background-color: #FFE794; /* Adjust color for dark mode if necessary */
+    background-color: #FFE794;
     color: #000000;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
+/* Submit Button Hover Effect */
 #contact-form button:hover {
-    background-color: #FFD700; /* Adjust hover color for dark mode if necessary */
+    background-color: #FFD700;
 }
 
+/* =========
+   Page Body
+   =========*/
 
-/* Reset some default styles for a consistent look */
-body, h1, h2, h3, p, ul, li, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
-}
-
-/* Body background color */
-body {
-    background-color: #D09D00;
-    color: #000000;
-    line-height: 1.6;
-    text-align: left;
-    position: relative;
-}
-
-/* Skip Navigation Link */
-.skip-nav {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: #fff;
-    padding: 8px 16px;
-    z-index: 2;
-}
-
-.skip-nav:focus {
-    top: 0;
-}
-
-/* Section 1: Introduction gradient background (Dark to Light) */
+/* Introduction Section Styles */
 #introduction {
     background: linear-gradient(to bottom, #D09D00, #FFD700);
     padding-left: 20px;
@@ -238,11 +288,12 @@ body {
     text-align: left;
 }
 
+/* Introduction Paragraph Styles */
 #introduction p {
-    font-size: clamp(24px, 10vw, 32px); /* Matches the body but ensures readability */
+    font-size: clamp(24px, 10vw, 32px);
 }
 
-/* Resume button styling */
+/* Resume Button Styles */
 #resume-button {
     background-color: transparent;
     color: #000000;
@@ -251,13 +302,19 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+/* Resume Button Hover Effect */
 #resume-button:hover {
     background-color: #D09D00;
 }
 
-/* SVG waves styling */
+/* =======================
+   SVG Waves Styling
+   ======================= */
+
+/* Top Waves Container */
 #waves-top, #waves-bottom {
     background-repeat: no-repeat;
     background-position: center;
@@ -273,6 +330,7 @@ body {
     fill: #FFD700;
 }
 
+/* Bottom Waves: Flip vertically for symmetry */
 #waves-bottom {
     transform: scaleY(-1);
 }
@@ -281,7 +339,11 @@ body {
     fill: #FFD700;
 }
 
-/* Sections 2 and 3: About Me and Projects */
+/* =======================
+   About Me and Projects Sections
+   ======================= */
+
+/* About Me and Projects Sections Container */
 #about-me, #projects {
     background-color: #D09D00;
     padding-left: 20px;
@@ -289,78 +351,90 @@ body {
     text-align: left;
 }
 
+/* Additional Padding for About Me Section */
 #about-me {
     padding-top: 100px;
 }
+
+/* =======================
+   Project Section Styles
+   ======================= */
 
 /* Clickable Project Links */
 #projects a.project-link,
 #projects a.project-image-link,
 #projects a.project-heading-link {
     display: block;
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits text color */
-    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
+/* Project Figure Styles */
 #projects figure {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the image and caption horizontally */
-    margin: 0 auto; /* Centers the figure within the section */
-    max-width: 100%; /* Ensures the figure doesn't exceed the container's width */
-    padding: 0 20px; /* Optional: Adds horizontal padding for better spacing on smaller screens */
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 20px;
 }
 
+/* Project Image Styles */
 #projects img {
-    max-width: 100%; /* Restricts the image width to the parent container's width */
-    height: auto; /* Maintains the aspect ratio of the image */
-    border-radius: 8px; /* Optional: Adds rounded corners to the image for aesthetic purposes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
-}
-
-#projects figcaption {
-    margin-top: 10px; /* Adds space between the image and the caption */
-    font-size: 16px; /* Adjusts the font size for readability */
-    color: #555; /* Sets a grey color for the caption text */
-    text-align: center; /* Centers the caption text */
-    max-width: 100%; /* Ensures the caption doesn't exceed the container's width */
-}
-
-#projects img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
+/* Project Image Hover Effect */
 #projects img:hover {
-    transform: scale(1.05); /* Slightly enlarges the image on hover */
+    transform: scale(1.05);
+}
+
+/* Project Caption Styles */
+#projects figcaption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    max-width: 100%;
 }
 
 /* Clickable Project Heading Link */
 #projects h3.project-heading a {
-    display: inline; /* Ensures the link only wraps the text */
-    text-decoration: none; /* Removes the default underline */
-    color: inherit; /* Inherits the text color from the parent element */
-    font-weight: bold; /* Makes the text bold for emphasis */
-    cursor: pointer; /* Changes the cursor to a pointer on hover */
-    transition: color 0.3s ease; /* Smooth transition for color changes */
+    display: inline;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
+/* Project Heading Link Hover Effect */
 #projects h3.project-heading a:hover {
     text-decoration: underline;
 }
 
-/* Footer gradient background (Light to Dark) */
+/* =======================
+   Footer Styles
+   ======================= */
+
+/* Footer Container */
 footer {
     background: linear-gradient(to bottom, #FFD700, #D09D00);
     padding: 20px;
     text-align: left;
 }
 
-footer p {
-    text-align: center;
-    font-size: clamp(14px, 3vw, 18px);
+/* Footer Title */
+footer h2 {
+    margin-bottom: 20px;
 }
 
+/* Footer List Styles */
 footer ul {
     display: grid;
     grid-template-columns: 40px 1fr;
@@ -370,21 +444,25 @@ footer ul {
     padding: 0;
 }
 
+/* Footer List Item Styles */
 footer ul li {
     display: contents;
 }
 
+/* Footer Icons Styles */
 footer ul li img {
     display: block;
     margin: 0 auto;
 }
 
+/* Footer Links and Spans Styles */
 footer ul li a,
 footer ul li span {
     display: block;
     text-align: left;
 }
 
+/* Specific Icon Widths */
 .mail-icon {
     width: 30px;
 }
@@ -401,46 +479,42 @@ footer ul li span {
     width: 20px;
 }
 
-/* Additional styling for layout and spacing */
+/* Footer Paragraph Styles */
+footer p {
+    text-align: center;
+    font-size: clamp(14px, 3vw, 18px);
+    margin-top: 40px;
+}
+
+/* =======================
+   Additional Layout and Spacing
+   ======================= */
+
+/* Heading Styles */
 h1, h2, h3 {
     margin-bottom: 20px;
 }
 
+/* Header Logo Spacing */
 header h2 {
     margin-bottom: 0;
 }
 
+/* Paragraph Styles */
 p {
     margin-bottom: 20px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* List Item Styles */
 li {
     margin-bottom: 10px;
 }
 
-a {
-    text-decoration: none;
-}
+/* =======================
+   Responsive Typography
+   ======================= */
 
-a:hover {
-    text-decoration: underline;
-}
-
-#open-contact-form:hover {
-    text-decoration: underline;
-}
-
-/* General body text */
-body {
-    font-size: 5vw; /* Adjust font size relative to viewport width */
-}
-
-/* Larger text for headings */
+/* Larger Text for Headings */
 h1 {
     font-size: clamp(32px, 18vw, 64px);
     line-height: 0.9;
@@ -464,21 +538,44 @@ h3 {
     font-size: clamp(24px, 5vw, 48px);
 }
 
-/* Responsive buttons */
+/* Responsive Buttons */
 button {
     font-size: clamp(20px, 4.5vw, 24px);
 }
 
-/* Responsive paragraph text */
+/* Responsive Paragraph Text */
 p {
     font-size: clamp(24px, 5vw, 32px);
 }
 
-/* Footer text */
-footer {
-    font-size: clamp(14px, 3vw, 18px);
+/* =======================
+   General Interaction Styles
+   ======================= */
+
+/* Cursor Pointer for All Buttons */
+button {
+    cursor: pointer;
 }
 
-footer p {
-    margin-top: 40px;
+/* =======================
+   Utility Classes
+   ======================= */
+
+/* Hidden Utility Class */
+.hidden {
+    display: none;
 }
+
+/* Visible Utility Class */
+.visible {
+    display: block;
+}
+
+/* No Scroll Utility Class */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* =======================
+   Media Queries for Enhanced Responsiveness
+   ======================= */
