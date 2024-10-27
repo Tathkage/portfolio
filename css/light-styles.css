@@ -1,12 +1,34 @@
 /* Header styles */
 header {
     background-color: #E7BA00;
-    padding: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 1001;
+    height: 10vh;
+}
+
+/* Sticky header when side menu is open */
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    background-color: #E7BA00; /* Ensure the background matches */
+    z-index: 1002; /* Higher than side-menu to stay on top */
+}
+
+/* Placeholder to maintain layout when header is fixed */
+.header-placeholder {
+    display: none;
+    height: 10vh;
+}
+
+header.sticky + .header-placeholder {
+    display: block;
 }
 
 .header-icons {
@@ -47,16 +69,11 @@ header {
 /* Menu and Modal Styles */
 #side-menu {
     position: fixed;
-    top: 60px;
-    right: 20px;
-    width: 250px;
+    width: 100%;
     background-color: #E7BA00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    flex-direction: column;
-    padding: 20px;
-    
-    /* Updated transition for smooth dropdown effect */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding-bottom: 20px;
     
     /* Initial state: hidden and scaled down */
     transform: scaleY(0);
@@ -78,7 +95,7 @@ header {
 
 #side-menu ul {
     list-style: none;
-    padding: 0;
+    padding-left: 10vw;
 }
 
 #side-menu ul li {
@@ -89,7 +106,7 @@ header {
     background: none;
     border: none;
     color: #000;
-    font-size: 18px;
+    font-size: clamp(24px, 10vw, 32px);
     cursor: pointer;
     text-align: left;
 }
