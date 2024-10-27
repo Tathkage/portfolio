@@ -79,6 +79,7 @@ header.sticky + .header-placeholder {
     transform: scaleY(0);
     opacity: 0;
     transform-origin: top;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, border-top 0.3s ease-in-out;
     
     z-index: 1000;
 }
@@ -91,6 +92,7 @@ header.sticky + .header-placeholder {
 #side-menu.visible {
     transform: scaleY(1);
     opacity: 1;
+    border-top: 2px solid #000000;
 }
 
 #side-menu ul {
@@ -317,6 +319,10 @@ a {
 }
 
 a:hover {
+    text-decoration: underline;
+}
+
+#open-contact-form:hover {
     text-decoration: underline;
 }
 
