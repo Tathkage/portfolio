@@ -10,6 +10,10 @@
    Reset and Base Styles
    ======================= */
 
+html {
+    font-size: clamp(0.75rem, 1.5vw, 1rem); /* Responsive base font size */
+}
+
 /* Reset default margins and paddings for consistency across browsers */
 body, h1, h2, h3, p, ul, li, button {
     margin: 0;
@@ -25,7 +29,7 @@ body {
     line-height: 1.6;
     text-align: left;
     position: relative;
-    font-size: 5vw;
+    font-size: 1rem;
 }
 
 /* Remove default list styles */
@@ -51,14 +55,15 @@ a:hover {
 /* Header Container */
 header {
     background-color: #E7BA00;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 4;
-    height: 10vh;
+    height: 4rem;
 }
 
 /* Sticky Header when Side Menu is Open */
@@ -74,7 +79,7 @@ header.sticky {
 /* Placeholder to Maintain Layout When Header is Fixed */
 .header-placeholder {
     display: none;
-    height: 10vh;
+    height: 4rem;
 }
 
 /* Display Placeholder When Header is Sticky */
@@ -158,12 +163,12 @@ header.sticky + .header-placeholder {
 /* Side Menu List Styles */
 #side-menu ul {
     list-style: none;
-    padding-left: 10vw;
+    padding-left: 2rem;
 }
 
 /* Side Menu List Item Styles */
 #side-menu ul li {
-    margin: 15px 0;
+    margin: 1.5rem 0;
 }
 
 /* Side Menu Links and Buttons Styles */
@@ -278,16 +283,24 @@ header.sticky + .header-placeholder {
 
 /* Introduction Section Styles */
 #introduction {
-    background: linear-gradient(to bottom, #E7BA00, #FFE794);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 50px;
+    /* Background Gradients for Browser Compatibility */
+    background: #FFE794; /* Fallback for older browsers */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E7BA00), color-stop(100%,#FFE794)); /* old WebKit (Safari 4–5.1, iOS 4–5) */
+    background: -webkit-linear-gradient(top,    #E7BA00 0%, #FFE794 100%); /* new WebKit (Safari 6+, Chrome) */
+    background:    -moz-linear-gradient(top,    #E7BA00 0%, #FFE794 100%); /* Firefox 3.6–15 */
+    background:     -o-linear-gradient(top,    #E7BA00 0%, #FFE794 100%); /* Opera 11.1–12 */
+    background:      linear-gradient(to bottom, #E7BA00 0%, #FFE794 100%); /* IE10+ and modern browsers */
+    /* Other */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
     text-align: left;
 }
 
 /* Introduction Paragraph Styles */
 #introduction p {
-    font-size: clamp(24px, 10vw, 32px);
+    font-size: clamp(2.0rem, 1.5vw, 3.0rem);
 }
 
 /* Resume Button Styles */
@@ -316,8 +329,8 @@ header.sticky + .header-placeholder {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-    width: 100%;
-    height: 10vh;
+    width: auto;
+    height: auto;
     position: relative;
     z-index: 1;
 }
@@ -343,8 +356,8 @@ header.sticky + .header-placeholder {
 /* About Me and Projects Sections Container */
 #about-me, #projects {
     background-color: #FFEEB7;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: left;
@@ -418,8 +431,18 @@ header.sticky + .header-placeholder {
 
 /* Footer Container */
 footer {
-    background: linear-gradient(to bottom, #FFE794, #E7BA00);
-    padding: 20px;
+    /* Background Gradients for Browser Compatibility */
+    background: #E7BA00; /* Fallback for older browsers */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFE794), color-stop(100%,#E7BA00)); /* old WebKit (Safari 4–5.1, iOS 4–5) */
+    background: -webkit-linear-gradient(top,    #FFE794 0%, #E7BA00 100%); /* new WebKit (Safari 6+, Chrome) */
+    background:    -moz-linear-gradient(top,    #FFE794 0%, #E7BA00 100%); /* Firefox 3.6–15 */
+    background:     -o-linear-gradient(top,    #FFE794 0%, #E7BA00 100%); /* Opera 11.1–12 */
+    background:      linear-gradient(to bottom, #FFE794 0%, #E7BA00 100%); /* IE10+ and modern browsers */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
     text-align: left;
 }
 
@@ -510,7 +533,7 @@ li {
 
 /* Larger Text for Headings */
 h1 {
-    font-size: clamp(32px, 18vw, 64px);
+    font-size: clamp(4.5rem, 1.5vw, 5rem);
     line-height: 0.9;
     margin-bottom: 0;
 }
