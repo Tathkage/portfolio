@@ -356,10 +356,10 @@ header.sticky + .header-placeholder {
 /* About Me and Projects Sections Container */
 #about-me, #projects {
     background-color: #FFEEB7;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
     text-align: left;
 }
 
@@ -438,17 +438,17 @@ footer {
     background:    -moz-linear-gradient(top,    #FFE794 0%, #E7BA00 100%); /* Firefox 3.6–15 */
     background:     -o-linear-gradient(top,    #FFE794 0%, #E7BA00 100%); /* Opera 11.1–12 */
     background:      linear-gradient(to bottom, #FFE794 0%, #E7BA00 100%); /* IE10+ and modern browsers */
-    
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    /* Other */
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     text-align: left;
 }
 
 /* Footer Title */
 footer h2 {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 /* Footer List Styles */
