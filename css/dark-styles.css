@@ -335,6 +335,7 @@ header.sticky + .header-placeholder {
     height: auto;
     position: relative;
     z-index: 1;
+    line-height: 0;
 }
 
 /* Set the wave SVGs as background images */
@@ -565,7 +566,7 @@ button {
 
 /* Responsive Paragraph Text */
 p {
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(16px, 5vw, 32px);
 }
 
 /* =======================
