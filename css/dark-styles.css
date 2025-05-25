@@ -363,8 +363,16 @@ header.sticky + .header-placeholder {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-top: 5rem;
-    padding-bottom: 1rem;
+}
+
+#about-me {
     text-align: left;
+    padding-bottom: 1rem;
+}
+
+#projects {
+    text-align: center;
+    padding-bottom: 5rem;
 }
 
 /* =======================
@@ -412,6 +420,10 @@ header.sticky + .header-placeholder {
     color: #000000;
     text-align: center;
     max-width: 100%;
+}
+
+#projects h3.project-heading {
+    text-align: center;
 }
 
 /* Clickable Project Heading Link */

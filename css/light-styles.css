@@ -363,6 +363,10 @@ header.sticky + .header-placeholder {
     text-align: left;
 }
 
+#projects {
+    padding-bottom: 5rem;
+}
+
 /* =======================
    Project Section Styles
    ======================= */
@@ -408,6 +412,10 @@ header.sticky + .header-placeholder {
     color: #000000;
     text-align: center;
     max-width: 100%;
+}
+
+#projects h3.project-heading {
+    text-align: center;
 }
 
 /* Clickable Project Heading Link */
